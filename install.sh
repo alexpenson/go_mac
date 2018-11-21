@@ -37,4 +37,8 @@ gsed -i \
     -e '89s|^.*$|fastcommand = '$go_directory'/leela-zero/build/leelaz|'\
     -e '90s|^.*$|fastparameters = --gtp --noponder --weights '$go_directory'/Lizzie/network.gz|' \
     config.ini
-    
+cd ..
+
+mkdir -p Games/Pro
+wget https://homepages.cwi.nl/\~aeb/go/games/games/AlphaGo/LeeSedol/1c.sgf
+python2.7 $go_directory/goreviewpartner-0.14.2/leela_zero_analysis.py --no-gui 1c.sgf
