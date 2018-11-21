@@ -1,6 +1,7 @@
 ## Make folder
-mkdir -p ~/Go
-cd ~/Go
+go_directory=$HOME/Go
+mkdir -p $go_directory
+cd $go_directory
 
 ## Install Dependencies
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -31,9 +32,9 @@ unzip v0.14.2.zip
 rm v0.14.2.zip
 cd goreviewpartner-0.14.2
 gsed -i \
-    -e '86s|^.*$|slowcommand = ~/Go/leela-zero/build/leelaz|'\
-    -e '87s|^.*$|slowparameters = --gtp --noponder --weights ~/Go/Lizzie/network.gz|'\
-    -e '89s|^.*$|fastcommand = ~/Go/leela-zero/build/leelaz|'\
-    -e '90s|^.*$|fastparameters = --gtp --noponder --weights ~/Go/Lizzie/network.gz|' \
+    -e '86s|^.*$|slowcommand = '$go_directory'/leela-zero/build/leelaz|'\
+    -e '87s|^.*$|slowparameters = --gtp --noponder --weights '$go_directory'/Lizzie/network.gz|'\
+    -e '89s|^.*$|fastcommand = '$go_directory'/leela-zero/build/leelaz|'\
+    -e '90s|^.*$|fastparameters = --gtp --noponder --weights '$go_directory'/Lizzie/network.gz|' \
     config.ini
     
