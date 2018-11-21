@@ -38,6 +38,8 @@ gsed -i \
     config.ini
 cd ..
 
+## test
+ls
 mkdir -p Games/Pro && cd Games/Pro
 wget https://homepages.cwi.nl/\~aeb/go/games/games/AlphaGo/LeeSedol/1c.sgf
 python2.7 $go_directory/goreviewpartner-0.14.2/leela_zero_analysis.py --no-gui 1c.sgf
