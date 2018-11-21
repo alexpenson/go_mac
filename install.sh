@@ -1,7 +1,6 @@
 ## Make folder
 go_directory=$HOME/Go
-mkdir -p $go_directory
-cd $go_directory
+mkdir -p $go_directory && cd $go_directory
 
 ## Install Dependencies
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -39,6 +38,6 @@ gsed -i \
     config.ini
 cd ..
 
-mkdir -p Games/Pro
+mkdir -p Games/Pro && cd Games/Pro
 wget https://homepages.cwi.nl/\~aeb/go/games/games/AlphaGo/LeeSedol/1c.sgf
 python2.7 $go_directory/goreviewpartner-0.14.2/leela_zero_analysis.py --no-gui 1c.sgf
