@@ -4,7 +4,7 @@ cd ~/Go
 
 ## Install Dependencies
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-brew install boost cmake wget
+brew install boost cmake wget gnu-sed
 
 ## Build Leela Zero
 git clone --recursive --branch next http://github.com/gcp/leela-zero.git
@@ -26,7 +26,14 @@ ln -s ../leela-zero/build/leelaz .
 cd ..
 
 ## Go Review Partner
-https://github.com/pnprog/goreviewpartner/archive/v0.14.2.zip
+wget https://github.com/pnprog/goreviewpartner/archive/v0.14.2.zip
 unzip v0.14.2.zip
 rm v0.14.2.zip
 cd goreviewpartner-0.14.2
+gsed -i \
+    -e '86s|^.*$|slowcommand = ~/Go/leela-zero/build/leelaz|'\
+    -e '87s|^.*$|slowparameters = --gtp --noponder --weights ~/Go/Lizzie/network.gz|'\
+    -e '89s|^.*$|fastcommand = ~/Go/leela-zero/build/leelaz|'\
+    -e '90s|^.*$|fastparameters = --gtp --noponder --weights ~/Go/Lizzie/network.gz|' \
+    config.ini
+    
