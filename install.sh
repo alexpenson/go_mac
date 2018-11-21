@@ -45,4 +45,4 @@ ls
 mkdir -p $go_directory/Games/Pro
 cd $go_directory/Games/Pro
 wget https://homepages.cwi.nl/\~aeb/go/games/games/AlphaGo/LeeSedol/1c.sgf
-python2.7 $go_directory/goreviewpartner-0.14.2/leela_zero_analysis.py --no-gui 1c.sgf
+python2.7 $go_directory/goreviewpartner-0.14.2/leela_zero_analysis.py --no-gui --range 1-10 1c.sgf
