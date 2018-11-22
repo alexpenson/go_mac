@@ -3,3 +3,6 @@
 # go_mac
 Install Go software on a mac from scratch
 
+```
+bash <(curl -s https://raw.githubusercontent.com/alexpenson/go_mac/master/install.sh)
+```
