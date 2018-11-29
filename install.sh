@@ -5,14 +5,14 @@ mkdir -p $go_directory
 ## Install Dependencies
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew install boost cmake wget gnu-sed
+python2.7 --version || brew install python@2
+java -version || brew cask install java
 
 ## Build Leela Zero
 cd $go_directory
 git clone --recursive --branch next http://github.com/gcp/leela-zero.git
 cd leela-zero
-
-# Use stand alone directory to keep source dir clean
-mkdir build && cd build
+mkdir build && cd build # Use stand alone directory to keep source dir clean
 cmake -DUSE_CPU_ONLY=1 ..
 cmake --build .
 ./tests
@@ -24,7 +24,6 @@ unzip Lizzie.0.6.Mac-Linux.zip
 rm Lizzie.0.6.Mac-Linux.zip
 cd Lizzie
 ln -s ../leela-zero/build/leelaz .
-
 
 ## Go Review Partner
 cd $go_directory
