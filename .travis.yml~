@@ -1,4 +1,4 @@
 language: bash
 os: osx
 script:
-    - bash install
+    - bash install.sh

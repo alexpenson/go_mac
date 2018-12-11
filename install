@@ -1,9 +1,10 @@
+#!/bin/bash
 ## Make folder
 go_directory=$HOME/Go
 mkdir -p $go_directory
 
 ## Install Dependencies
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+echo /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew install boost cmake wget gnu-sed
 
 ## Build Leela Zero
