@@ -4,17 +4,17 @@
 go_directory=$HOME/Go
 mkdir -p $go_directory
 
-## Make apps
-platypus --overwrite --name Lizzie --app-icon scripts/Lizzie.icns scripts/Lizzie.sh
-mv -f scripts/Lizzie.app $go_directory 
-platypus --overwrite --name GoReviewPartner --app-icon scripts/GoReviewPartner.icns scripts/GoReviewPartner.sh
-mv -f scripts/GoReviewPartner.app $go_directory
-
 ## Install Dependencies
 echo "\n" | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew install boost cmake wget gnu-sed platypus
 python2.7 --version || brew install python@2
 java -version || brew cask install java
+
+## Make apps
+platypus --overwrite --name Lizzie --app-icon scripts/Lizzie.icns scripts/Lizzie.sh
+mv -f scripts/Lizzie.app $go_directory 
+platypus --overwrite --name GoReviewPartner --app-icon scripts/GoReviewPartner.icns scripts/GoReviewPartner.sh
+mv -f scripts/GoReviewPartner.app $go_directory
 
 ## Build Leela Zero
 cd $go_directory
