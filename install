@@ -11,7 +11,7 @@ python2.7 --version || brew install python@2
 java -version || brew cask install java
 
 ## Make apps
-scripts=$(dirname $0)/scripts
+scripts="$( cd "$(dirname $0)" ; pwd -P )"/scripts
 platypus --overwrite --name Lizzie --app-icon $scripts/scripts/Lizzie.icns $scripts/Lizzie.sh
 mv -f $scripts/Lizzie.app $go_directory 
 platypus --overwrite --name GoReviewPartner --app-icon $scripts/GoReviewPartner.icns $scripts/GoReviewPartner.sh
