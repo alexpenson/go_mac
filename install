@@ -1,11 +1,18 @@
 #!/bin/bash
+
 ## Make folder
 go_directory=$HOME/Go
 mkdir -p $go_directory
 
+## Make apps
+platypus --overwrite --name Lizzie --app-icon scripts/Lizzie.icns scripts/Lizzie.sh
+mv -f scripts/Lizzie.app $go_directory 
+platypus --overwrite --name GoReviewPartner --app-icon scripts/GoReviewPartner.icns scripts/GoReviewPartner.sh
+mv -f scripts/GoReviewPartner.app $go_directory
+
 ## Install Dependencies
-echo /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-brew install boost cmake wget gnu-sed
+echo "\n" | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+brew install boost cmake wget gnu-sed platypus
 python2.7 --version || brew install python@2
 java -version || brew cask install java
 
@@ -45,4 +52,4 @@ ls
 mkdir -p $go_directory/Games/Pro
 cd $go_directory/Games/Pro
 wget https://homepages.cwi.nl/\~aeb/go/games/games/AlphaGo/LeeSedol/1c.sgf
-python2.7 $go_directory/goreviewpartner-0.14.2/leela_zero_analysis.py --no-gui --range 1-10 1c.sgf
+python2.7 $go_directory/goreviewpartner-0.14.2/leela_zero_analysis.py --no-gui --range 7-10 1c.sgf
