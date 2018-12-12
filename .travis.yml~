@@ -1,4 +1,0 @@
-language: bash
-os: osx
-script:
-    - bash install.sh
