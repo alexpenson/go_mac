@@ -11,5 +11,5 @@ This should install
 
 in `Go` in your home directory.
 ```
-bash <(curl -s https://raw.githubusercontent.com/alexpenson/go_mac/master/install.sh)
+bash <(curl -s https://raw.githubusercontent.com/alexpenson/go_mac/master/install)
 ```
