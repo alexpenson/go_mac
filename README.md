@@ -3,13 +3,14 @@
 # go_mac
 Install Go software on a mac from scratch
 
-This should install
+Click on the "install" file.
+
+If it says "Are you sure you want to open it?", click "Open".
+
+This should install:
 
 * Leela Zero
 * Lizzie and
 * GoReviewPartner
 
-in `Go` in your home directory.
-```
-bash <(curl -s https://raw.githubusercontent.com/alexpenson/go_mac/master/install)
-```
+in a `Go` folder in your home directory.
