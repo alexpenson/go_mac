@@ -11,10 +11,11 @@ python2.7 --version || brew install python@2
 java -version || brew cask install java
 
 ## Make apps
-platypus --overwrite --name Lizzie --app-icon scripts/Lizzie.icns scripts/Lizzie.sh
-mv -f scripts/Lizzie.app $go_directory 
-platypus --overwrite --name GoReviewPartner --app-icon scripts/GoReviewPartner.icns scripts/GoReviewPartner.sh
-mv -f scripts/GoReviewPartner.app $go_directory
+scripts=$(dirname $0)/scripts
+platypus --overwrite --name Lizzie --app-icon $scripts/scripts/Lizzie.icns $scripts/Lizzie.sh
+mv -f $scripts/Lizzie.app $go_directory 
+platypus --overwrite --name GoReviewPartner --app-icon $scripts/GoReviewPartner.icns $scripts/GoReviewPartner.sh
+mv -f $scripts/GoReviewPartner.app $go_directory
 
 ## Build Leela Zero
 cd $go_directory
@@ -51,5 +52,5 @@ cd $go_directory
 ls
 mkdir -p $go_directory/Games/Pro
 cd $go_directory/Games/Pro
-wget https://homepages.cwi.nl/\~aeb/go/games/games/AlphaGo/LeeSedol/1c.sgf
-python2.7 $go_directory/goreviewpartner-0.14.2/leela_zero_analysis.py --no-gui --range 7-10 1c.sgf
+cp $scripts/1.sgf .
+python2.7 $go_directory/goreviewpartner-0.14.2/leela_zero_analysis.py --no-gui --range 7-10 1.sgf
