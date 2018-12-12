@@ -1,2 +1,3 @@
 #!/bin/bash
-cd ~/Go/Lizzie && java -jar lizzie.jar
+cd ~/Go/Lizzie
+java -jar lizzie.jar
