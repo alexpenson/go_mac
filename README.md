@@ -3,9 +3,9 @@
 # go_mac
 Install Go software on a mac from scratch
 
-Click on the "install" file.
-
-If it says "Are you sure you want to open it?", click "Open".
+* Click on the "install" file while holding the Control key.
+* Choose Open from the shortcut menu.
+* If it says "Are you sure you want to open it?", click "Open".
 
 This should install:
 
