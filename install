@@ -10,13 +10,6 @@ brew install boost cmake wget gnu-sed platypus
 python2.7 --version || brew install python@2
 java -version || brew cask install java
 
-## Make apps
-scripts="$( cd "$(dirname $0)" ; pwd -P )"/scripts
-platypus --interface-type None --overwrite --name Lizzie --app-icon $scripts/Lizzie.icns $scripts/Lizzie.sh
-mv -f $scripts/Lizzie.app $go_directory 
-platypus --interface-type None --overwrite --name GoReviewPartner --app-icon $scripts/GoReviewPartner.icns $scripts/GoReviewPartner.sh
-mv -f $scripts/GoReviewPartner.app $go_directory
-
 ## Build Leela Zero
 cd $go_directory
 git clone --recursive --branch next http://github.com/gcp/leela-zero.git
@@ -46,6 +39,13 @@ gsed -i \
     -e '89s|^.*$|fastcommand = '$go_directory'/leela-zero/build/leelaz|'\
     -e '90s|^.*$|fastparameters = --gtp --noponder --weights '$go_directory'/Lizzie/network.gz|' \
     config.ini
+
+## Make apps
+scripts="$( cd "$(dirname $0)" ; pwd -P )"/scripts
+platypus --interface-type None --overwrite --name Lizzie --app-icon $scripts/Lizzie.icns $scripts/Lizzie.sh
+mv -f $scripts/Lizzie.app $go_directory 
+platypus --interface-type None --overwrite --name GoReviewPartner --app-icon $scripts/GoReviewPartner.icns $scripts/GoReviewPartner.sh
+mv -f $scripts/GoReviewPartner.app $go_directory
 
 ## test
 cd $go_directory
