@@ -5,4 +5,4 @@ script:
     - bash install
     - if [ "${TRAVIS_OS_NAME}" = "osx" ]; then ( sudo Xvfb :99 -ac -screen 0 1024x768x8; echo ok )& fi
     - open ~/Go/GoReviewPartner.app
-    - open ~/Go/Lizzie.app
+#    - open ~/Go/Lizzie.app
